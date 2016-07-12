@@ -1,0 +1,7 @@
+#name install_nginx.playbook
+---
+- hosts: web
+  sudo: yes
+  
+  tasks:
+  - include: "tasks/install_nginx.yaml"
