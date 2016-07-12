@@ -1,0 +1,24 @@
+[app]
+# list for application VMs
+CHIDCAPP[50:100].newearth.com
+
+[db]
+# list for database VMs
+CHIDCDB[50:100].newearth.com
+
+[web]
+# list for web VMs
+CHIDCWEB[50:100].newearth.com
+
+
+[CHIDC01:children]
+# group for all VMs that will populate CHIDC01
+app
+db
+web
+
+[CHIDC01:vars]
+# group for variables across all VMs in CHIDC01
+ansible_ssh_user=AnsibleAdmin
+ansible_ssh_pass=P@ssw0rd!
+ntp_server=0.pool.ntp.org
