@@ -1,0 +1,18 @@
+#config file to create a VM from an existing template 
+
+- vsphere_guest:
+    vcenter_hostname: CHIDCVC01.newearth.local
+    username: root
+    password: P@ssw0rd
+    guest: CHIDCLINUX[02:03]
+    from_template: yes
+    template_src: UbuntuTemplate
+    cluster: CHIDC
+- vsphere_guest:
+    vcenter_hostname: CHIDCVC01.newearth.local
+    username: root
+    password: P@ssw0rd
+    guest: CHIDCLINUX[04:05]
+    from_template: yes
+    template_src: CentOSTemplate
+    cluster: CHIDC
