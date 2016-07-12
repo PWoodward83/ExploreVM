@@ -1,0 +1,74 @@
+- vsphere_guest:
+    vcenter_hostname: CHIDCVC01.newearth.local
+    username: root
+    password: P@ssw0rd
+    guest: CHIDCLINUX[02:03]
+    state: powered_on
+    vm_extra_config:
+      vcpu.hotadd: yes
+      mem.hotadd:  yes
+      notes: Linux VM deployed by Ansible
+      folder: MyFolder
+    vm_disk:
+      disk1:
+        size_gb: 10
+        type: thin
+        datastore: CHIDCDS01
+        folder: chidc01/prod/web
+    vm_nic:
+      nic1:
+        type: vmxnet3
+        network: VM Network
+        network_type: standard
+      nic2:
+        type: vmxnet3
+        network: dvSwitch Network
+        network_type: dvs
+    vm_hardware:
+      memory_mb: 2048
+      num_cpus: 2
+      osid: ubuntu64Guest
+      scsi: paravirtual
+      vm_cdrom:
+        type: "iso"
+        iso_path: "CHIDCDS01/ISO/ubuntu-16.04-server-amd64"
+    esxi:
+      datacenter: CHIDC01
+      hostname: CHIDCESX01.newearth.local
+- vsphere_guest:
+    vcenter_hostname: CHIDCVC01.newearth.local
+    username: root
+    password: P@ssw0rd
+    guest: CHIDCLINUX[04:05]
+    state: powered_on
+    vm_extra_config:
+      vcpu.hotadd: yes
+      mem.hotadd:  yes
+      notes: Linux VM deployed by Ansible
+      folder: MyFolder
+    vm_disk:
+      disk1:
+        size_gb: 10
+        type: thin
+        datastore: CHIDCDS01
+        folder: chidc01/prod/web
+    vm_nic:
+      nic1:
+        type: vmxnet3
+        network: VM Network
+        network_type: standard
+      nic2:
+        type: vmxnet3
+        network: dvSwitch Network
+        network_type: dvs
+    vm_hardware:
+      memory_mb: 2048
+      num_cpus: 2
+      osid: centos64Guest
+      scsi: paravirtual
+      vm_cdrom:
+        type: "iso"
+        iso_path: "CHIDCDS01/ISO/CentOS-7-x86_64-Minimal-1511"
+    esxi:
+      datacenter: CHIDC01
+      hostname: CHIDCESX01.newearth.local
