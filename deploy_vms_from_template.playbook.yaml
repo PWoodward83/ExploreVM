@@ -1,0 +1,8 @@
+---
+- hosts: vCenter
+  user: root
+  sudo: true
+
+  tasks:
+    - name: Points to the task to create the VMs
+    - include: "tasks/create_vm_from_template.yaml"
