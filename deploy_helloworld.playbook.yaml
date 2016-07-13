@@ -1,0 +1,6 @@
+---
+- name: Hello World Playbook
+  hosts: app:web:db
+  tasks:
+  - name: Pull Hello World file from GitHub
+  - git: repo=https://github.com/PWoodward83/Hello-World/readme.md.git dest=/home/readme.md
