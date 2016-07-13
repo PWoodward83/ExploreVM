@@ -1,15 +1,18 @@
+[vCenter]
+#vCenter Server Info
+ansible_ssh_host=10.15.2.5 Ansible_ssh_user=root ansible_ssh_pass=P@ssw0rd
+
 [app]
 # list for application VMs
-CHIDCAPP[50:100].newearth.com
+CHIDCAPP[13:17].newearth.local
 
 [db]
 # list for database VMs
-CHIDCDB[50:100].newearth.com
+CHIDCDB[07:11].newearth.local
 
 [web]
 # list for web VMs
-CHIDCWEB[50:100].newearth.com
-
+CHIDCWEB[29:33].newearth.local
 
 [CHIDC01:children]
 # group for all VMs that will populate CHIDC01
@@ -22,3 +25,7 @@ web
 ansible_ssh_user=AnsibleAdmin
 ansible_ssh_pass=P@ssw0rd!
 ntp_server=0.pool.ntp.org
+
+
+
+
